@@ -1,0 +1,8 @@
+RewriteEngine On
+
+# Serve the directory if it exists
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+# Serve the file if it exists
+RewriteCond %{REQUEST_FILENAME} -f
+# If neither condition above is met, redirect to index.html
+RewriteRule ^ index.html [L]
