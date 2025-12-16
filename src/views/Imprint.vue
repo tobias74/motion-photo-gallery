@@ -11,12 +11,10 @@
 
         <dl class="meta">
           <div class="metaRow">
-            <dt>HRB</dt>
-            <dd class="mono">219431</dd>
+            <dd class="mono">HRB 219431</dd>
           </div>
           <div class="metaRow">
-            <dt>USt-IdNr.</dt>
-            <dd class="mono">DE 301206623</dd>
+            <dd class="mono">USt-IdNr. DE 301206623</dd>
           </div>
         </dl>
       </address>
