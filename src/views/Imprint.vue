@@ -14,7 +14,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        github.com/tobias74/motion-photo-gallery
+        https://github.com/tobias74/motion-photo-gallery
       </a>
     </div>
   </footer>
