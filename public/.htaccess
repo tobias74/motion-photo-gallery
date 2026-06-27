@@ -1,8 +1,16 @@
 RewriteEngine On
+RewriteBase /
 
-# Serve the directory if it exists
-RewriteCond %{REQUEST_FILENAME} -d [OR]
-# Serve the file if it exists
-RewriteCond %{REQUEST_FILENAME} -f
-# If neither condition above is met, redirect to index.html
-RewriteRule ^ index.html [L]
+# Redirect non-canonical hosts to the canonical HTTPS origin.
+RewriteCond %{HTTP_HOST} !^motionphoto\.gallery$ [NC]
+RewriteRule ^ https://motionphoto.gallery%{REQUEST_URI} [R=301,L]
+
+# Redirect HTTP requests to HTTPS before applying the SPA fallback.
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+RewriteRule ^ https://motionphoto.gallery%{REQUEST_URI} [R=301,L]
+
+# If the requested file or directory does not exist, serve index.html.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]

@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.SFTP_USERNAME }}
           server: access978123064.webspace-data.io
           port: 22  # Default SFTP port, change if yours is different
-          local_path: ./dist/*
+          local_path: ./dist/.
           remote_path: /
           sftp_only: true  # Use this if your server only allows SFTP connections
           password: ${{ secrets.SFTP_PASSWORD }}  # This will use the password for authentication
