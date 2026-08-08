@@ -61,6 +61,8 @@
           :download="motionPhoto.downloadVideoFileName"
         ></video>
 
+        <div class="media-filename mt-2 text-caption">{{ motionPhoto.file.name }}</div>
+
         <span v-if="motionPhoto.isExtracting">extracting...</span>
         <span v-if="!motionPhoto.hasVideo && !motionPhoto.isExtracting">no video found</span>
         <a v-if="motionPhoto.isOriginalVideoReady" :href="motionPhoto.originalVideoSrc" :download="motionPhoto.downloadVideoFileName"
@@ -183,3 +185,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.media-filename {
+  overflow-wrap: anywhere;
+}
+</style>
